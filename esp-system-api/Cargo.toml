@@ -1,0 +1,10 @@
+[package]
+name = "esp-system-api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+heapless = { workspace = true }
+
+[features]
+esp32c6 = []

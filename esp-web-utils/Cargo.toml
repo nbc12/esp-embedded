@@ -1,0 +1,19 @@
+[package]
+name = "esp-web-utils"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+picoserve = { workspace = true }
+log = { workspace = true }
+embassy-time = { workspace = true }
+embassy-sync = { workspace = true }
+esp-system-api = { path = "../esp-system-api" }
+esp-session-mgmt = { path = "../esp-session-mgmt" }
+sha2 = { workspace = true }
+heapless = { workspace = true }
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+
+[features]
+default = []
+embassy = ["picoserve/embassy", "picoserve/json"]

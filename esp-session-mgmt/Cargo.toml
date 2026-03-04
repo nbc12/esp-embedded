@@ -1,0 +1,13 @@
+[package]
+name = "esp-session-mgmt"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+log = { workspace = true }
+heapless = { workspace = true }
+embassy-time = { workspace = true }
+embassy-sync = { workspace = true }
+
+[features]
+default = []

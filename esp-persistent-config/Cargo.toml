@@ -1,0 +1,26 @@
+[package]
+name = "esp-persistent-config"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+embassy-sync = { workspace = true }
+embassy-embedded-hal = { workspace = true }
+esp-storage = { workspace = true }
+sequential-storage = { workspace = true }
+heapless = { workspace = true }
+log = { workspace = true }
+embedded-storage = { workspace = true }
+embedded-storage-async = { workspace = true }
+pastey = { workspace = true }
+esp-hal = { workspace = true }
+
+[features]
+default = []
+esp32 = ["esp-hal/esp32", "esp-storage/esp32"]
+esp32c2 = ["esp-hal/esp32c2", "esp-storage/esp32c2"]
+esp32c3 = ["esp-hal/esp32c3", "esp-storage/esp32c3"]
+esp32c6 = ["esp-hal/esp32c6", "esp-storage/esp32c6"]
+esp32h2 = ["esp-hal/esp32h2", "esp-storage/esp32h2"]
+esp32s2 = ["esp-hal/esp32s2", "esp-storage/esp32s2"]
+esp32s3 = ["esp-hal/esp32s3", "esp-storage/esp32s3"]

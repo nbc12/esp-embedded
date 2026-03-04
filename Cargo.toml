@@ -1,0 +1,60 @@
+[workspace]
+resolver = "3"
+members = [
+    "esp-persistent-config",
+    "esp-web-utils",
+    "esp-wifi",
+    "esp-services",
+    "esp-system-api",
+    "esp-session-mgmt",
+]
+
+[workspace.dependencies]
+# Embassy
+embassy-executor = "0.9.0"
+embassy-futures = "0.1.2"
+embassy-net = { version = "0.8.0", features = [
+    "dhcpv4",
+    "dhcpv4-hostname",
+    "medium-ethernet",
+    "tcp",
+    "dns",
+    "mdns",
+] }
+embassy-time = "0.5.0"
+embassy-sync = "0.7.2"
+embassy-embedded-hal = "0.5.0"
+
+# ESP HAL / Radio / Storage
+esp-hal = { version = "1.0.0", features = ["log-04", "unstable"] }
+esp-radio = { version = "0.17.0", features = ["log-04", "wifi", "unstable"] }
+esp-storage = "0.8.1"
+
+# Storage abstractions
+embedded-storage = "0.3.1"
+embedded-storage-async = "0.4.1"
+sequential-storage = { version = "7.1.0", features = ["defmt", "heapless"] }
+
+# Networking / edge crates
+edge-dhcp = "0.7.0"
+edge-nal = "0.6.0"
+edge-nal-embassy = "0.8.1"
+edge-mdns = "0.7.0"
+edge-captive = "0.7.0"
+
+# Web / serialization
+picoserve = { version = "0.18.0", features = ["embassy", "log"] }
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+sha2 = { version = "0.10.8", default-features = false }
+
+# Utilities
+heapless = "0.8.0"
+log = "0.4.29"
+static_cell = "2.1.1"
+pastey = "0.2.1"
+
+[profile.release]
+debug = true
+debug-assertions = true
+lto = "fat"
+codegen-units = 1
